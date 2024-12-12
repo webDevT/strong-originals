@@ -30,8 +30,8 @@
     top: 0;
   }
   100% {
-    opacity: 1;
-    top: -100%;
+    opacity: 0;
+    top: -150%;
   }
 }
 
@@ -45,7 +45,7 @@
     top: 0;
   }
   100% {
-    opacity: 1;
-    top: -100%;
+    opacity: 0;
+    top: -150%;
   }
 }

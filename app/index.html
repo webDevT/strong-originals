@@ -510,25 +510,25 @@ Start jouw verandering
     const words = document.querySelectorAll('.word');
     let currentIndex = 0;
 
-    // Установить первый элемент активным
+    
     words[currentIndex].classList.add('active');
 
     setInterval(() => {
-        // Текущий элемент становится "уходящим"
+       
         words[currentIndex].classList.remove('active');
         words[currentIndex].classList.add('exit');
 
-        // Вычисляем следующий индекс
+       
         currentIndex = (currentIndex + 1) % words.length;
 
-        // Новый элемент становится "активным"
+      
         words[currentIndex].classList.add('active');
 
-        // Убираем класс "exit" с предыдущего элемента
+       
         setTimeout(() => {
             words[(currentIndex - 1 + words.length) % words.length].classList.remove('exit');
-        }, 500); // Должно совпадать с `transition` из CSS
-    }, 1500); // Интервал переключения
+        }, 500); 
+    }, 1500); 
 });
 
 </script>
@@ -538,25 +538,25 @@ Start jouw verandering
     const words = document.querySelectorAll('.word');
     let currentIndex = 0;
 
-    // Установить первый элемент активным
+   
     words[currentIndex].classList.add('active');
 
     setInterval(() => {
-        // Текущий элемент становится "уходящим"
+      
         words[currentIndex].classList.remove('active');
         words[currentIndex].classList.add('exit');
 
-        // Вычисляем следующий индекс
+       
         currentIndex = (currentIndex + 1) % words.length;
 
-        // Новый элемент становится "активным"
+      
         words[currentIndex].classList.add('active');
 
-        // Убираем класс "exit" с предыдущего элемента
+       
         setTimeout(() => {
             words[(currentIndex - 1 + words.length) % words.length].classList.remove('exit');
-        }, 500); // Должно совпадать с `transition` из CSS
-    }, 1500); // Интервал переключения
+        }, 500); 
+    }, 1500); 
 });
 
 </script>
@@ -567,18 +567,18 @@ Start jouw verandering
         const videoXs = document.querySelector('.video-xs');
         const scrollPosition = window.scrollY;
     
-        // Якщо прокручено більше 200px, відео переходить у fullscreen
+       
         if (scrollPosition > 200 && scrollPosition < 600) {
             if (!video.classList.contains('fullscreen')) {
                 video.classList.add('fullscreen');
                 video.classList.remove('mini');
-                video.muted = true; // Початково без звуку
+                video.muted = true; 
                 video.play().catch((error) => {
                     console.error('Відтворення заблоковано браузером:', error);
                 });
             }
         } 
-        // Якщо прокручено більше 600px, відео переміщується в mini
+       
         else if (scrollPosition >= 600) {
             if (!videoXs.contains(video)) {
                 videoXs.appendChild(video);
@@ -587,29 +587,29 @@ Start jouw verandering
                 video.classList.remove('fullscreen');
                 setTimeout(() => {
                     video.classList.add('mini');
-                    video.muted = true; // Вимикаємо звук в mini
+                    video.muted = true; 
                     video.play().catch((error) => {
                         console.error('Відтворення заблоковано браузером:', error);
                     });
                 }, 0);
             }
         } 
-        // Якщо відео не в fullscreen або mini, то ставимо його в початковий стан
+       
         else {
             if (video.classList.contains('fullscreen') || video.classList.contains('mini')) {
                 video.classList.remove('fullscreen', 'mini');
                 video.pause();
                 video.volume = 0;
-                video.muted = true; // Вимикаємо звук
+                video.muted = true; 
             }
         }
     });
     
-    // Обробка взаємодії з користувачем для ініціалізації відео
+    
     document.getElementById('video').addEventListener('click', () => {
         const video = document.getElementById('video');
         if (video.muted) {
-            video.muted = false; // Вмикаємо звук після кліка
+            video.muted = false; 
             video.play().catch((error) => {
                 console.error('Відтворення заблоковано браузером:', error);
             });
@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         wrapper.addEventListener('click', (event) => {
             if (window.innerWidth < 992) {
-                event.stopPropagation(); // Останавливаем дальнейшую обработку
+                event.stopPropagation(); 
                 if (!item.classList.contains('active')) {
                     item.classList.add('active');
                 } else {
@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         link.addEventListener('click', (event) => {
             if (window.innerWidth < 992 && !item.classList.contains('active')) {
-                event.preventDefault(); // Блокируем переход, если не раскрыто
+                event.preventDefault(); 
                 item.classList.add('active');
             }
         });
@@ -651,28 +651,28 @@ document.addEventListener('DOMContentLoaded', () => {
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
        const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 4.5, // Количество слайдов по умолчанию
-    spaceBetween: 20, // Расстояние между слайдами
-    loop: true, // Бесконечный слайдер
+    slidesPerView: 4.5,
+    spaceBetween: 20,
+    loop: true, 
     autoplay: {
-        delay: 3000, // Автопрокрутка каждые 3 секунды
-        disableOnInteraction: false, // Не отключать автопрокрутку после взаимодействия
+        delay: 3000, 
+        disableOnInteraction: false, 
     },
-    speed: 1000, // Плавность перехода
+    speed: 1000, 
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        768: { // Настройки для экранов шириной от 768px
+        768: { 
             slidesPerView: 4.5,
             spaceBetween: 20,
         },
-        480: { // Настройки для экранов шириной от 480px (мобильные устройства)
-            slidesPerView: 2.5, // Отображение двух слайдов и половинки по бокам
-            spaceBetween: 15, // Меньшее расстояние между слайдами
+        480: { 
+            slidesPerView: 2.5, 
+            spaceBetween: 15, 
         },
-        0: { // Настройки для экранов шириной от 0px (мобильные устройства)
+        0: { 
             slidesPerView: 2.5,
             spaceBetween: 10,
         }
@@ -682,36 +682,21 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
 
     <script>
-// Добавляем обработчик события для клика на кнопку
+
 document.querySelector('.open-form-btn').addEventListener('click', function(e) {
-    e.preventDefault(); // Отменяем стандартное поведение (переход по якорю)
+    e.preventDefault(); 
     
-    // Находим секцию
+  
     const contactSection = document.getElementById('contact');
     
-    // Добавляем класс visible, чтобы секция стала видимой
+    
     contactSection.classList.add('visible');
     
-    // Скроллим до секции contact с плавной прокруткой
+    
     contactSection.scrollIntoView({ behavior: 'smooth' });
 });
 
-// // Добавляем обработчик события для прокрутки страницы
-// let lastScrollTop = 0; // Переменная для отслеживания последнего положения скролла
 
-// window.addEventListener('scroll', function() {
-//     const contactSection = document.getElementById('contact');
-//     let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop; // Получаем текущую позицию скролла
-
-//     // Проверяем, если прокручиваем страницу вверх
-//     if (currentScrollTop < lastScrollTop) {
-//         // Убираем класс visible, если прокручиваем вверх
-//         contactSection.classList.remove('visible');
-//     }
-
-//     // Обновляем значение последнего положения скролла
-//     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-// });
 
     </script>
 
@@ -719,8 +704,8 @@ document.querySelector('.open-form-btn').addEventListener('click', function(e) {
     const textarea = document.querySelector('.textarea');
 
 textarea.addEventListener('input', function() {
-  this.style.height = 'auto';  // Сбрасываем высоту перед вычислением
-  this.style.height = (this.scrollHeight) + 'px';  // Устанавливаем высоту в зависимости от содержимого
+  this.style.height = 'auto'; 
+  this.style.height = (this.scrollHeight) + 'px';  
 });
 
 </script>
