@@ -1,0 +1,51 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: 9;
+  background: #1B1B1D;
+  -webkit-transition: all 0.5;
+  -o-transition: all 0.5;
+  transition: all 0.5;
+}
+
+.header.sticky {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.header .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 4.267vw;
+  }
+  .header {
+    padding-top: 9.067vw;
+    padding-bottom: 9.067vw;
+  }
+  .logo img {
+    width: 10.933vw;
+  }
+  .menu {
+    font-size: 4.267vw;
+  }
+}

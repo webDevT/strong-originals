@@ -1,0 +1,108 @@
+@import "vars";
+@import "fonts";
+
+.cases__row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.cases__image {
+    position: sticky;
+    top: 50px; 
+    flex-shrink: 0; 
+    width: 50%; 
+    height: auto; 
+}
+
+.cases__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cases__list {
+    margin-left: 20px; /* Отступ между изображением и списком */
+    display: flex;
+    flex-direction: column; /* Вертикальный список */
+    gap: 10px; /* Отступы между элементами */
+    width: 50%;
+    padding-top: 100px;
+}
+
+.case {
+    width: 400px;
+    max-width: 100%;
+    padding-top: 32px;
+    p {
+        font-family: $secondary-font;
+    }
+}
+
+.case__title {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: $secondary-font;
+    padding-bottom: 30px;
+}
+.case__img {
+    margin-top: 32px;
+    max-width: 100%;
+}
+.case:nth-child(2) {
+    color: $pink;
+}
+.case:nth-child(4) {
+    color: $purple;
+}
+.cases {
+    padding-bottom: 140px;
+}
+@media screen and (max-width: 992px) {
+    .cases__image {
+        position: static;
+    }
+    .cases__row {
+        flex-direction: column;
+    }
+    .cases__image {
+        width: 100%;
+        position: static;
+    }
+    .cases__list {
+        width: 100%;
+        padding-top: 0;
+    }
+    .case {
+        width: 100%;
+        margin-top: 10vw;
+    }
+    .cases__list {
+        gap: 0;
+        margin-left: 0;
+    }
+    .case__title {
+        font-size: 5.333vw;
+        padding-bottom: 4.267vw;
+    }
+    .case p {
+        margin-bottom: 0;
+    }
+    .case__img {
+        margin-top: 8vw;
+        width: 100%;
+    }
+    .case:nth-child(2),
+    .case:nth-child(4) {
+        color: #fff;
+    }
+    .cases {
+        padding-bottom: 27vw;
+    }
+    
+}
+@import "media";
+
+
+

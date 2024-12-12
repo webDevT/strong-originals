@@ -1,0 +1,75 @@
+@import "vars";
+@import "fonts";
+
+
+//start global style
+body {
+    background: $background;
+    color: $text-color;
+    font-family: $main-font;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+.container-fluid {
+    width: 1160px;
+    max-width: 87.2vw;
+    padding-left: 0;
+    padding-right: 0;
+}
+.h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $secondary-font;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+.button-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    background: $green;
+    padding: 16px 24px;
+    color: $background;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all .3s;
+}
+//end global style
+
+
+@media screen and (max-width: 992px) {
+    body {
+        font-size: 4.267vw;
+    }
+    .h1 {
+        font-size: 8.533vw;
+    }
+    .button-wrapper {
+        padding-top: 10vw;
+        padding-bottom: 0;
+    }
+    .container-fluid {
+        max-width: 90vw;
+    }
+    
+    .button {
+        padding: 4.267vw 3vw;
+        font-size: 4.267vw;
+
+    }
+    body {
+        overflow-x: hidden;
+    }
+   
+    
+
+}
+  
+@import "media";
+
+
+

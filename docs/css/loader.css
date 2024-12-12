@@ -1,0 +1,51 @@
+.loader {
+  background: #9EFF00;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  -webkit-animation: loaderAnimation 4s forwards;
+          animation: loaderAnimation 4s forwards;
+}
+
+@-webkit-keyframes loaderAnimation {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  70% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+    top: -100%;
+  }
+}
+
+@keyframes loaderAnimation {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  70% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+    top: -100%;
+  }
+}

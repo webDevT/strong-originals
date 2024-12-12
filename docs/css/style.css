@@ -1,0 +1,68 @@
+body {
+  background: #1B1B1D;
+  color: #FFF7F8;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  width: 1160px;
+  max-width: 87.2vw;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.h1 {
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.button-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button {
+  background: #9EFF00;
+  padding: 16px 24px;
+  color: #1B1B1D;
+  text-decoration: none;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 4.267vw;
+  }
+  .h1 {
+    font-size: 8.533vw;
+  }
+  .button-wrapper {
+    padding-top: 10vw;
+    padding-bottom: 0;
+  }
+  .container-fluid {
+    max-width: 90vw;
+  }
+  .button {
+    padding: 4.267vw 3vw;
+    font-size: 4.267vw;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,197 @@
+@import "vars";
+@import "fonts";
+body {
+    overflow-x: hidden;
+}
+
+.open-form-btn-wrap {
+    padding-bottom: 100px;
+    color: #fff;
+    text-decoration: none;
+}
+.open-form-btn {
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+.contact {
+    background: #FFF7F8;
+    height: 0;
+    overflow: hidden;
+    color: #000;
+    box-sizing: border-box;
+}
+.contact.visible {
+    height: auto;
+}
+.contact__title {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: $secondary-font;
+}
+.contact__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact__title {
+    width: 100%;
+}
+.contact__col {
+    width: 48%;
+}
+.contact__row {
+    padding-bottom: 100px;
+}
+.contact__img {
+    max-width: 100%;
+}
+.input,
+.textarea {
+    width: 100%;
+    display: block;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #1B1B1D;
+    padding-bottom: 10px;
+    font-family: $main-font;
+}
+.label {
+    font-family: $secondary-font;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.input-wrapper {
+    margin-bottom: 24px;
+}
+.textarea {
+    width: 100%;
+    min-height: 50px;  /* минимальная высота */
+    resize: none;  /* отключаем возможность вручную изменять размер */
+    overflow-y: hidden;  /* скрываем вертикальную полосу прокрутки */
+  }
+.checkbox__label {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $background;
+    padding: 4px;
+    position: relative;
+    cursor: pointer;
+}
+.checkbox__label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    background: $background;
+    display: none;
+} 
+.checkbox__input {
+    display: none;
+}
+.checkbox__input:checked + .checkbox__label:after {
+    display: block;
+}
+.checkbox-wrapper {
+    display: flex;
+    font-weight: 500;
+    label {
+        cursor: pointer;
+    }
+}
+.checkbox {
+    margin-right: 20px;
+}
+.button {
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+.button--submit {
+    margin-top: 48px;
+    text-align: center;
+    outline: none;
+}
+.button:hover {
+    background: $background;
+    color: #fff;
+}
+@media screen and (max-width: 1280px) {
+    
+}
+@media screen and (max-width: 992px) {
+    .contact__row {
+        flex-direction: column;
+    }
+    .contact__col {
+        width: 100%;
+    }
+    .contact__img {
+        width: 100%;
+    }
+    .contact__title {
+        order: 2;
+    }
+    .contact__col:nth-child(2) {
+        order: 1;
+        padding-top: 15vw;
+    }
+    .contact__col:last-child {
+        order: 3;
+    }
+    .contact__title {
+        padding-top: 5vw;
+        
+    }
+    .contact__title {
+        padding-top: 15vw;
+        padding-bottom: 12.8vw;
+    }
+    .contact__title {
+        font-size: 10.667vw;
+        font-weight: 700;
+        text-align: left;
+        line-height: 1.2;
+    }
+    .input,
+    .textarea {
+        padding-bottom: 2.133vw;
+    }
+    .checkbox__label {
+        width: 8.533vw;
+        height: 8.533vw;
+    }
+    .checkbox {
+        margin-right: 5.333vw;
+    }
+    .button--submit {
+        width: 100%;
+    }
+    .contact__row {
+        padding-bottom: 20.533vw;
+    }
+    .open-form-btn,
+    .open-form-btn-wrap {
+        text-align: center;
+    }
+    .contact {
+        height: auto;
+    }
+    
+    
+}
+@import "media";
+
+
+

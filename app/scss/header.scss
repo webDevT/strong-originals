@@ -1,0 +1,48 @@
+@import "vars";
+@import "fonts";
+
+
+.header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    padding-top: 40px; 
+    padding-bottom: 40px;
+    z-index: 9;
+    background: $background;
+    transition: all .5;
+}
+.header.sticky {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.header .container-fluid {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+.menu {
+    font-size: 18px;
+    cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+    body {
+        font-size: 4.267vw;
+    }
+    .header {
+        padding-top: 9.067vw;
+        padding-bottom: 9.067vw;
+    }
+    .logo img {
+        width: 10.933vw;
+    }
+    .menu {
+        font-size: 4.267vw;
+    } 
+     
+}
+@import "media";
+
+
+
