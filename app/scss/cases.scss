@@ -8,14 +8,23 @@
     width: 100%;
 }
 
+
 .cases__image {
     position: sticky;
-    top: 50px; 
-    flex-shrink: 0; 
-    width: 50%; 
-    height: auto; 
+    top: 0%;
+    transform: translateY(0%);
+    transition: all 1s;
 }
 
+.cases .container-fluid {
+    position: relative;   /* Родительский элемент должен иметь относительное позиционирование */
+}
+
+.cases__image.sticky {
+    position: sticky; /* Применяем sticky, когда элемент становится фиксированным */
+    top: 50%;
+    transform: translateY(-50%); /* Центрируем по вертикали при зависимости */
+}
 .cases__image img {
     width: 100%;
     height: auto;
@@ -28,7 +37,7 @@
     flex-direction: column; /* Вертикальный список */
     gap: 10px; /* Отступы между элементами */
     width: 50%;
-    padding-top: 100px;
+
 }
 
 .case {
@@ -99,6 +108,14 @@
     }
     .cases {
         padding-bottom: 27vw;
+    }
+    .cases__image.sticky {
+        position: static;
+        transform: translateY(0);
+    }
+    .cases__image {
+        position: static;
+        transform: translateY(0);
     }
     
 }

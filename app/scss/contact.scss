@@ -4,28 +4,75 @@ body {
     overflow-x: hidden;
 }
 
-.open-form-btn-wrap {
-    padding-bottom: 100px;
-    color: #fff;
-    text-decoration: none;
-}
-.open-form-btn {
-    display: inline-block;
-    border-bottom: 1px solid #fff;
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-}
+// .open-form-btn-wrap {
+//     padding-bottom: 100px;
+//     color: #fff;
+//     text-decoration: none;
+// }
+// .open-form-btn {
+//     display: inline-block;
+//     border-bottom: 1px solid #fff;
+//     cursor: pointer;
+//     color: #fff;
+//     text-decoration: none;
+// }
 .contact {
     background: #FFF7F8;
-    height: 0;
-    overflow: hidden;
+    // height: 0;
+    // overflow: hidden;
     color: #000;
     box-sizing: border-box;
 }
-.contact.visible {
-    height: auto;
-}
+// .contact.visible {
+//     height: auto;
+// }
+
+
+  
+//   .wrapper-body {
+//     position: relative;
+//   }
+  
+//   .content {
+//     position: relative;
+//     z-index: 2;
+//   }
+  
+//   .contact {
+//     position: absolute; /* Ключевой момент */
+//     top: 100%; /* Начальная позиция под секцией */
+//     left: 0;
+//     right: 0;
+//     transform: translateY(100%); /* Изначально скрыта */
+//     transition: transform 2s ease; /* Плавное выезжание */
+//     z-index: 1; /* Оставляем под секцией .content */
+//   }
+  
+//   /* Когда секция активна */
+//   .contact.active {
+//     transform: translateY(0); /* Выезжает на свое место */
+//   }
+  
+.wrapper-body {
+    position: relative;
+  
+  }
+  
+  .content {
+    position: relative;
+    z-index: 97;
+  }
+  
+  .contact {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    right: 0;
+    transition: transform 1s ease-out;
+    transform: translateY(100%); /* Изначально скрыта */
+    z-index: 99; /* Оставляем под секцией .content */
+  } 
+  
 .contact__title {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -61,6 +108,11 @@ body {
     border-bottom: 1px solid #1B1B1D;
     padding-bottom: 10px;
     font-family: $main-font;
+}
+.input--valid {
+    background-image: url('../img/checkmark.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
 }
 .label {
     font-family: $secondary-font;

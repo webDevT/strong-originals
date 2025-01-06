@@ -13,11 +13,26 @@
 .cases__image {
   position: -webkit-sticky;
   position: sticky;
-  top: 50px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 50%;
-  height: auto;
+  top: 0%;
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.cases .container-fluid {
+  position: relative; /* Родительский элемент должен иметь относительное позиционирование */
+}
+
+.cases__image.sticky {
+  position: -webkit-sticky;
+  position: sticky; /* Применяем sticky, когда элемент становится фиксированным */
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); /* Центрируем по вертикали при зависимости */
 }
 
 .cases__image img {
@@ -37,7 +52,6 @@
           flex-direction: column; /* Вертикальный список */
   gap: 10px; /* Отступы между элементами */
   width: 50%;
-  padding-top: 100px;
 }
 
 .case {
@@ -116,5 +130,17 @@
   }
   .cases {
     padding-bottom: 27vw;
+  }
+  .cases__image.sticky {
+    position: static;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .cases__image {
+    position: static;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
   }
 }

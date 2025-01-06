@@ -30,6 +30,9 @@
         <img src="img/gif.svg" alt="">
     </div>
 
+    <div class="wrapper-body">
+
+   
     <div class="content">
 <!-- start header -->
 <header class="header">
@@ -389,14 +392,14 @@
 
     </div>
 
-<div class="open-form-btn-wrap">
+<!-- <div class="open-form-btn-wrap">
     <div class="container-fluid">
          <a href="#contact" class="open-form-btn">
 Start jouw verandering 
          </a>
     </div>
    
-</div>	
+</div>	 -->
 
 <section class="contact" id="contact">
     
@@ -420,7 +423,7 @@ Start jouw verandering
                     <label for="" class="label">
                         Voornaam*
                     </label>
-                    <input type="text" class="input">
+                    <input type="text" class="input input--valid">
                 </div>
 
                 <div class="input-wrapper">
@@ -504,6 +507,7 @@ Start jouw verandering
 </div>
    
 </section>
+</div>
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
@@ -681,24 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     </script>
 
-    <script>
-
-document.querySelector('.open-form-btn').addEventListener('click', function(e) {
-    e.preventDefault(); 
-    
-  
-    const contactSection = document.getElementById('contact');
-    
-    
-    contactSection.classList.add('visible');
-    
-    
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-});
-
-
-
-    </script>
 
 <script>
     const textarea = document.querySelector('.textarea');
@@ -708,6 +694,44 @@ textarea.addEventListener('input', function() {
   this.style.height = (this.scrollHeight) + 'px';  
 });
 
+</script>
+
+<script>
+window.addEventListener('scroll', () => {
+  const contactSection = document.querySelector('.contact');
+  const contentSection = document.querySelector('.content');
+
+
+  const start = contentSection.offsetHeight - window.innerHeight * 0.8; 
+  const end = contentSection.offsetHeight; 
+
+
+  const scrollY = window.scrollY;
+
+
+  const progress = Math.min(Math.max((scrollY - start) / (end - start), 0), 1);
+
+
+  contactSection.style.transform = `translateY(${(1 - progress) * 100}%)`;
+});
+
+
+
+</script>
+
+<script>
+    window.addEventListener('scroll', () => {
+    const image = document.querySelector('.cases__image');
+    const container = document.querySelector('.cases .container-fluid'); 
+
+    const containerTop = container.getBoundingClientRect().top;
+    const containerHeight = container.offsetHeight;
+    if (containerTop <= 0 && containerTop + containerHeight >= image.offsetHeight) {
+        image.classList.add('sticky');
+    } else {
+        image.classList.remove('sticky');
+    }
+});
 </script>
 	
 </body>
